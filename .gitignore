@@ -1,0 +1,8 @@
+# Generated files.
+**.exe
+**.o
+**.ppu
+
+# Backup files.
+**.kate-swp
+**~
