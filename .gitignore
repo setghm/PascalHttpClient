@@ -1,3 +1,10 @@
+# IDE directories.
+.idea/
+.vscode/
+
+# Output directories.
+build/
+
 # Generated files.
 **.exe
 **.o
