@@ -35,7 +35,7 @@ Begin
   Header('Accept-Language', 'en-US,es-MX;q=0.8');
   Header('Accept-Encoding', 'gzip, deflate, br');
   Header('DNT', '1');
-  Header('Connection', 'keep-alive');
+  Header('Connection', 'close');
   Header('Upgrade-Insecure-Requests', '1');
   Header('Sec-Fetch-Dest', 'document');
   Header('Sec-Fetch-Mode', 'navigate');

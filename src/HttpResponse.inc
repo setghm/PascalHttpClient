@@ -208,35 +208,22 @@ End;
 Function THttpResponse.ReadContentAsString: String;
 Var
   ReadBuffer: TByteArray;
-  StringBuffer: String;
-  TotalBytesRead: LongWord = 0;
-  TotalBufferSize: LongWord = 0;
+  StringBuffer: String = '';
   BytesRead: LongInt;
 Const
-  StringBufferSize: LongWord = 1024;
   ReadBufferSize: LongWord = 512;
 begin
   SetLength(ReadBuffer, ReadBufferSize);
 
   Repeat
+    FillChar(ReadBuffer[0], ReadBufferSize, #0);
 
     BytesRead := FSock.Read(ReadBuffer, ReadBufferSize);
 
-    TotalBytesRead := TotalBytesRead + BytesRead;
+    If BytesRead > 0 Then
+      StringBuffer := StringBuffer + String(PAnsiChar(@ReadBuffer[0]));
 
-    If TotalBytesRead >= (TotalBufferSize - 1) Then
-      Begin
-        TotalBufferSize := TotalBufferSize + StringBufferSize;
-
-        SetLength(StringBuffer, TotalBufferSize);
-      End;
-
-    SetString(StringBuffer, PChar(@ReadBuffer[0]), BytesRead);
-    
-  Until (BytesRead < 0);
-
-  // Reduce StringBuffer length to fit the received data.
-  SetLength(StringBuffer, TotalBytesRead);
+  Until BytesRead <= 0;
 
   Result := StringBuffer;
 end;

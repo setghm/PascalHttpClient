@@ -12,8 +12,6 @@ Var
   Response: THttpResponse;
   Header: THttpHeader;
   Cookie: THttpCookie;
-Const
-  ContentBufferSize: LongWord = 1024;
 Begin
   Write('URL> ');
   Read(URL);
@@ -23,7 +21,7 @@ Begin
 
   Response := Request.Send;
 
-  Writeln('=============RESPONSE=============');
+  Writeln('============= RESPONSE =============');
   Writeln('HTTP Version: ', Response.HttpVersion);
   Writeln('Status Code: ', Response.StatusCode);
   Writeln('Status Text: ', Response.StatusText);

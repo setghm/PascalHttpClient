@@ -1,6 +1,6 @@
 Unit PascalWeb;
 {$MODE OBJFPC} {$H+}
-//{$DEFINE DEBUG}
+{$DEFINE DEBUG}
 
 Interface
 {$DEFINE INTERFACE}
@@ -63,9 +63,10 @@ Implementation
 {$I HttpRequest.inc}
 
 {$UNDEF IMPLEMENTATION}
-initialization
+Initialization
+{$DEFINE INITIALIZATION}
 
-// SSL Initialization
-SSLLibraryInit;
+{$I SSLSocket.inc}
 
+{$UNDEF INITIALIZATION}
 End.

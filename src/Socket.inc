@@ -87,7 +87,7 @@ Begin
 
 {$IFDEF DEBUG}
   If Result < 0 Then
-    WriteLn('[ERROR][Socket] Error while writting to socket');
+    WriteLn('[ERROR][Socket] Error while writting to socket')
   Else
     Writeln('[DEBUG][Socket]', Result, ' bytes written');
 {$ENDIF}
@@ -99,7 +99,7 @@ Begin
 
 {$IFDEF DEBUG}
   If Result < 0 Then
-    WriteLn('[ERROR][Socket] Error while reading from socket');
+    WriteLn('[ERROR][Socket] Error while reading from socket')
   Else
     WriteLn('[DEBUG][Socket]', Result, ' bytes read');
 {$ENDIF}
