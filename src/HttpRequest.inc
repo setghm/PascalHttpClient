@@ -30,7 +30,7 @@ Begin
   Else FSock := TSSLSocket.Create(FUrl.Host, DEFAULT_HTTPS_PORT);
 
   Header('Host', FUrl.Host);
-  Header('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:42.0) Gecko/20100101 Firefox/42.0');
+  Header('User-Agent', UA_PASCAL_WEB);
   Header('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8');
   Header('Accept-Language', 'en-US,es-MX;q=0.8');
   Header('Accept-Encoding', 'gzip, deflate, br');

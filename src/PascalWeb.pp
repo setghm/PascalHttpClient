@@ -42,13 +42,13 @@ Type
   EHttpMethod = (HTTP_HEAD, HTTP_GET, HTTP_POST, HTTP_PUT, HTTP_OPTIONS, HTTP_DELETE);
   EHttpProtocol = (PROTOCOL_HTTP, PROTOCOL_HTTPS);
 
+{$I UserAgents.inc}
 {$I URL.inc}
 {$I Socket.inc}
 {$I SSLSocket.inc}
 {$I HttpMessage.inc}
 {$I HttpResponse.inc}
 {$I HttpRequest.inc}
-{$I UserAgents.inc}
 
 {$UNDEF INTERFACE}
 
