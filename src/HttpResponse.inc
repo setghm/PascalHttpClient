@@ -90,7 +90,7 @@ Var
   RegexObj: TRegExpr;
   i: LongWord;
 Begin
-  i := Pos(EOLDouble, RawData);
+  i := Pos(EOL_DOUBLE, RawData);
 
   HeadString := Copy(RawData, 0, i);
   FBody := Trim(Copy(RawData, i, Length(RawData)));

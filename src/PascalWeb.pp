@@ -1,6 +1,6 @@
 Unit PascalWeb;
 {$MODE OBJFPC} {$H+}
-{$DEFINE DEBUG}
+//{$DEFINE DEBUG}
 
 Interface
 {$DEFINE INTERFACE}
@@ -14,11 +14,9 @@ Const
   
   EOL: String = #13 + #10;
 
-  EOLDouble: String = #13 + #10 + #13 + #10;
+  EOL_DOUBLE: String = #13 + #10 + #13 + #10;
 
 Type 
-  TCallbackLineRead = Procedure (Const Line: String);
-
   THttpHeader = Record
     Name: String;
     Value: String;
@@ -49,6 +47,7 @@ Type
 {$I HttpMessage.inc}
 {$I HttpResponse.inc}
 {$I HttpRequest.inc}
+{$I HttpClientUtils.inc}
 
 {$UNDEF INTERFACE}
 
@@ -61,6 +60,7 @@ Implementation
 {$I HttpMessage.inc}
 {$I HttpResponse.inc}
 {$I HttpRequest.inc}
+{$I HttpClientUtils.inc}
 
 {$UNDEF IMPLEMENTATION}
 Initialization
